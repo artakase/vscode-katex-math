@@ -1,0 +1,32 @@
+{
+  "name": "katex-math",
+  "displayName": "KaTeX syntax for Markdown Math",
+  "description": "Improved KaTeX syntax highlighting for Markdown Math",
+  "version": "0.0.1",
+  "publisher": "artakase",
+  "author": {
+      "name": "TAKASE Arihiro"
+  },
+  "license": "MIT",
+    "homepage": "https://github.com/artakase/vscode-katex-math",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/artakase/vscode-katex-math"
+    },
+    "bugs": {
+        "url": "https://github.com/artakase/vscode-katex-math/issues"
+    },
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [{
+      "language": "markdown-math",
+      "scopeName": "text.html.markdown.math",
+      "path": "./syntaxes/md-math.tmLanguage.json"
+    }]
+  }
+}

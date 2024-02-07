@@ -1,0 +1,574 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Markdown Math",
+	"scopeName": "text.html.markdown.math",
+	"patterns": [
+		{
+			"include": "#math"
+		}
+	],
+	"repository": {
+		"math": {
+			"patterns": [
+				{
+					"name": "comment.line.percentage.math.tex",
+					"match": "(%).*(?=$)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.comment.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.punctuation.bracket.general.math.tex",
+					"begin": "\\{",
+					"end": "\\}",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.bracket.begin.math.tex"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.bracket.end.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.matrix.math.tex",
+					"begin": "(\\\\begin)\\s*\\{((?:[pbBvV]|small)?matrix|d?r?cases|equation\\*?|split|(?:align|gather)(?:ed|\\*)?)\\}",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.matrix.math.tex",
+					"begin": "(\\\\begin)\\s*\\{([pbBvV]?matrix\\*)\\}\\s*(?:\\[([lcr])\\])?",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						},
+						"3": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.array.math.tex",
+					"begin": "(\\\\begin)\\s*\\{(d?array)\\}\\s*(?:\\{([lcr|:]*?)\\}|([lcr|:]))",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						},
+						"3": {
+							"name": "support.class.math.tex"
+						},
+						"4": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.subarray.math.tex",
+					"begin": "(\\\\begin)\\s*\\{(subarray)\\}\\s*(?:\\{([lcr]?)\\}|([lcr]))",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						},
+						"3": {
+							"name": "support.class.math.tex"
+						},
+						"4": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.align.math.tex",
+					"begin": "(\\\\begin)\\s*\\{((?:align(?:at\\*?|edat)))\\}\\s*(?:\\{(\\d*)\\}|(\\d))",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						},
+						"3": {
+							"name": "variable.parameter.math.tex"
+						},
+						"4": {
+							"name": "variable.parameter.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.environment.cd.math.tex",
+					"begin": "(\\\\begin)\\s*\\{(CD)\\}",
+					"end": "(\\\\end)\\s*\\{(\\2)\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.begin.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.end.math.tex"
+						},
+						"2": {
+							"name": "support.class.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"name": "keyword.control.cdarrow.math.tex",
+							"match": "@[=|.]"
+						},
+						{
+							"name": "keyword.control.cdarrow.math.tex",
+							"match": "@([<>AV])(.*?)\\1(.*?)\\1",
+							"captures": {
+								"2": {
+									"name": "support.class.cdlabel.math.tex"
+								},
+								"3": {
+									"name": "support.class.cdlabel.math.tex"
+								}
+							}
+						},
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.control.def.math.tex",
+					"begin": "(\\\\[gex]?def)([^{}$&#^_a-zA-Z][^{}$&^_]*?)([#1-9]*)?\\s*\\{",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.def.math.tex"
+						},
+						"2": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"3": {
+							"name": "variable.parameter.function.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "meta.control.newcommand.math.tex",
+					"begin": "(\\\\(?:new|renew|provide)command)\\s*(\\\\[a-zA-Z@]+)\\s*?(?:\\[([0-9])\\])?\\s*\\{",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.newcommand.math.tex"
+						},
+						"2": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"3": {
+							"name": "variable.parameter.function.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"name": "keyword.control.math.tex",
+					"match": "\\\\(?:begin|end|global|[gex]?def|(?:future)?let|(?:new|renew|provide)command|(?:begin|end)group)(?![a-zA-Z@])"
+				},
+				{
+					"name": "string.text.math.tex",
+					"begin": "(\\\\(?:text(?:rm|sf|tt|normal|bf|md|it|up)?|[lrc]lap|[hf]box|angl))\\s*{",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						},
+						{
+							"include": "#mathmode"
+						}
+					]
+				},
+				{
+					"name": "string.verb.math.tex",
+					"match": "(\\\\verb\\*?)([^a-zA-Z]|(?<=\\*).).*?(?:\\2|$)",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						}
+					}
+				},
+				{
+					"name": "constant.character.escape.math.tex",
+					"match": "\\\\char(?:[0-9]+|'[0-7]+|\"\\h+|`(?:\\\\.|[^\\\\]))"
+				},
+				{
+					"name": "constant.character.escape.math.tex",
+					"match": "\\\\[{}/%#&_$]"
+				},
+				{
+					"name": "meta.function.raisebox.math.tex",
+					"begin": "(\\\\raisebox)\\s*\\{.*?([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}).*?\\}\\s*({)",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						},
+						"3": {
+							"name": "string.raisebox.math.tex"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "string.raisebox.math.tex"
+						}
+					},
+					"contentName": "string.raisebox.math.tex",
+					"patterns": [
+						{
+							"include": "$self"
+						},
+						{
+							"include": "#mathmode"
+						}
+					]
+				},
+				{
+					"name": "meta.function.above.math.tex",
+					"match": "(\\\\above)\\s*\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.function.rule.math.tex",
+					"match": "(\\\\rule)\\s*(?:\\[([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\]\\s*)?\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}\\s*\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						},
+						"3": {
+							"name": "constant.numeric.distance.math.tex"
+						},
+						"4": {
+							"name": "constant.numeric.distance.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.function.color.math.tex",
+					"match": "(\\\\color)\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "variable.parameter.color.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.function.textcolor.math.tex",
+					"begin": "(\\\\(?:textcolor|colorbox))\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*(\\{)",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "variable.parameter.color.math.tex"
+						},
+						"3": {
+							"name": "string.textcolor.math.tex"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "string.textcolor.math.tex"
+						}
+					},
+					"contentName": "string.textcolor.math.tex",
+					"patterns": [
+						{
+							"include": "$self"
+						},
+						{
+							"include": "#mathmode"
+						}
+					]
+				},
+				{
+					"name": "meta.function.fcolorbox.math.tex",
+					"begin": "(\\\\fcolorbox)\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*(\\{)",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "variable.parameter.color.math.tex"
+						},
+						"3": {
+							"name": "variable.parameter.color.math.tex"
+						},
+						"4": {
+							"name": "string.fcolorbox.math.tex"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "string.fcolorbox.math.tex"
+						}
+					},
+					"contentName": "string.fcolorbox.math.tex",
+					"patterns": [
+						{
+							"include": "$self"
+						},
+						{
+							"include": "#mathmode"
+						}
+					]
+				},
+				{
+					"name": "meta.function.hyperlink.math.tex",
+					"match": "(\\\\(?:href|url))\\s*\\{(.*?)\\}",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "markup.underline.link.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.function.hyperlink.math.tex",
+					"match": "(\\\\includegraphics)\\s*\\[.*?\\]\\s*\\{(.*?)\\}",
+					"captures": {
+						"1": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"2": {
+							"name": "markup.underline.link.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.control.spacing.math.tex",
+					"match": "(\\\\(?:m?kern|[mh]skip|hspace\\*?))(?:\\s*\\{.*?([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}).*?\\}|(?![a-zA-Z@]))",
+					"captures": {
+						"1": {
+							"name": "keyword.control.spacing.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.control.spacing.math.tex",
+					"match": "(\\\\(?:m?kern|[mh]skip))\\s*([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})",
+					"captures": {
+						"1": {
+							"name": "keyword.control.spacing.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						}
+					}
+				},
+				{
+					"name": "meta.control.spacing.math.tex",
+					"match": "(\\\\\\\\)(\\[[-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}\\])?",
+					"captures": {
+						"1": {
+							"name": "keyword.control.spacing.math.tex"
+						},
+						"2": {
+							"name": "constant.numeric.distance.math.tex"
+						}
+					}
+				},
+				{
+					"name": "keyword.control.spacing.math.tex",
+					"match": "~"
+				},
+				{
+					"name": "keyword.control.spacing.math.tex",
+					"match": "\\\\[,>:;! ]"
+				},
+				{
+					"name": "keyword.control.spacing.math.tex",
+					"match": "\\\\(?:(?:neg)?(?:thin|med|thick)|en|nobreak)?space(?![a-zA-Z@])"
+				},
+				{
+					"name": "keyword.control.spacing.math.tex",
+					"match": "\\\\(?:q?quad|[hv]?phantom|mathstrut|newline|cr|allowbreak)(?![a-zA-Z@])"
+				},
+				{
+					"name": "keyword.control.align.math.tex",
+					"match": "&"
+				},
+				{
+					"name": "variable.other.constant.math.tex",
+					"match": "\\\\['`^~=.\"]"
+				},
+				{
+					"name": "variable.other.constant.math.tex",
+					"match": "\\\\[a-zA-Z@]+"
+				},
+				{
+					"name": "support.type.script.math.tex",
+					"match": "[_\\^]"
+				},
+				{
+					"name": "variable.parameter.function.math.tex",
+					"match": "#[1-9]"
+				}
+			]
+		},
+		"mathmode": {
+			"patterns": [
+				{
+					"name": "support.class.math.block.math.tex",
+					"begin": "\\$",
+					"end": "\\$",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.math.block.begin.math.tex"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.math.block.end.math.tex"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#math"
+						}
+					]
+				}
+			]
+		}
+	}
+}
