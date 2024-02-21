@@ -255,7 +255,7 @@
 				},
 				{
 					"name": "meta.control.newcommand.math.tex",
-					"begin": "(\\\\(?:new|renew|provide)command)\\s*(\\\\[a-zA-Z@]+)\\s*?(?:\\[([0-9])\\])?\\s*\\{",
+					"begin": "(\\\\(?:new|renew|provide)command)\\s*(?:\\{(\\\\[a-zA-Z@]+)\\}|(\\\\[a-zA-Z@]+))\\s*?(?:\\[([0-9])\\])?\\s*\\{",
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
@@ -265,6 +265,9 @@
 							"name": "variable.other.constant.math.tex"
 						},
 						"3": {
+							"name": "variable.other.constant.math.tex"
+						},
+						"4": {
 							"name": "variable.parameter.function.math.tex"
 						}
 					},
@@ -280,7 +283,7 @@
 				},
 				{
 					"name": "string.text.math.tex",
-					"begin": "(\\\\(?:text(?:rm|sf|tt|normal|bf|md|it|up)?|[lrc]lap|[hf]box|angl))\\s*{",
+					"begin": "(\\\\(?:text(?:rm|sf|tt|normal|bf|md|it|up)?|[lrc]lap|[hf]box|angl|ce))\\s*{",
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
@@ -311,7 +314,7 @@
 				},
 				{
 					"name": "constant.character.escape.math.tex",
-					"match": "\\\\[{}/%#&_$]"
+					"match": "\\\\[{}%#&_$]"
 				},
 				{
 					"name": "meta.function.raisebox.math.tex",
@@ -474,7 +477,7 @@
 				},
 				{
 					"name": "meta.control.spacing.math.tex",
-					"match": "(\\\\(?:m?kern|[mh]skip|hspace\\*?))(?:\\s*\\{.*?([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}).*?\\}|(?![a-zA-Z@]))",
+					"match": "(\\\\(?:m?kern|[mh]skip))\\s*([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})",
 					"captures": {
 						"1": {
 							"name": "keyword.control.spacing.math.tex"
@@ -486,7 +489,7 @@
 				},
 				{
 					"name": "meta.control.spacing.math.tex",
-					"match": "(\\\\(?:m?kern|[mh]skip))\\s*([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})",
+					"match": "(\\\\(?:m?kern|[mh]skip|hspace\\*?))(?:\\s*\\{.*?([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}).*?\\}|(?![a-zA-Z@]))",
 					"captures": {
 						"1": {
 							"name": "keyword.control.spacing.math.tex"
