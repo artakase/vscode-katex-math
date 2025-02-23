@@ -128,7 +128,7 @@
 				},
 				{
 					"name": "meta.environment.subarray.math.tex",
-					"begin": "(\\\\begin)\\s*\\{(subarray)\\}\\s*(?:\\{([lcr]?)\\}|([lcr]))",
+					"begin": "(\\\\begin)\\s*\\{(subarray)\\}\\s*(?:\\{([lc]?)\\}|([lc]))",
 					"end": "(\\\\end)\\s*\\{(\\2)\\}",
 					"beginCaptures": {
 						"1": {
@@ -213,19 +213,167 @@
 					"patterns": [
 						{
 							"name": "keyword.control.cdarrow.math.tex",
-							"match": "@[=|.]"
+							"match": "@\\s*[=|.]"
 						},
 						{
-							"name": "keyword.control.cdarrow.math.tex",
-							"match": "@([<>AV])(.*?)\\1(.*?)\\1",
-							"captures": {
-								"2": {
-									"name": "support.class.cdlabel.math.tex"
-								},
-								"3": {
-									"name": "support.class.cdlabel.math.tex"
+							"name": "meta.keyword.control.cdarrow.math.tex",
+							"begin": "@\\s*(?=<)",
+							"end": "(?<!@\\s*)(<)|@|\\\\end",
+							"beginCaptures": {
+								"0": {
+									"name": "keyword.control.cdarrow.math.tex"
 								}
-							}
+							},
+							"endCaptures": {
+								"1": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"patterns": [
+								{
+									"name": "meta.keyword.control.cdarrow.math.tex",
+									"begin": "(?<=@\\s*)<",
+									"end": "(<)|(?=@|\\\\end)",
+									"beginCaptures": {
+										"0": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"endCaptures": {
+										"1": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"patterns": [
+										{
+											"include": "$self"
+										}
+									]
+								},
+								{
+									"include": "$self"
+								}
+							]
+						},
+						{
+							"name": "meta.keyword.control.cdarrow.math.tex",
+							"begin": "@\\s*(?=>)",
+							"end": "(?<!@\\s*)(>)|@|\\\\end",
+							"beginCaptures": {
+								"0": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"endCaptures": {
+								"1": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"patterns": [
+								{
+									"name": "meta.keyword.control.cdarrow.math.tex",
+									"begin": "(?<=@\\s*)>",
+									"end": "(>)|(?=@|\\\\end)",
+									"beginCaptures": {
+										"0": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"endCaptures": {
+										"1": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"patterns": [
+										{
+											"include": "$self"
+										}
+									]
+								},
+								{
+									"include": "$self"
+								}
+							]
+						},
+						{
+							"name": "meta.keyword.control.cdarrow.math.tex",
+							"begin": "@\\s*(?=A)",
+							"end": "(?<!@\\s*)(A)|@|\\\\end",
+							"beginCaptures": {
+								"0": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"endCaptures": {
+								"1": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"patterns": [
+								{
+									"name": "meta.keyword.control.cdarrow.math.tex",
+									"begin": "(?<=@\\s*)A",
+									"end": "(A)|(?=@|\\\\end)",
+									"beginCaptures": {
+										"0": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"endCaptures": {
+										"1": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"patterns": [
+										{
+											"include": "$self"
+										}
+									]
+								},
+								{
+									"include": "$self"
+								}
+							]
+						},
+						{
+							"name": "meta.keyword.control.cdarrow.math.tex",
+							"begin": "@\\s*(?=V)",
+							"end": "(?<!@\\s*)(V)|@|\\\\end",
+							"beginCaptures": {
+								"0": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"endCaptures": {
+								"1": {
+									"name": "keyword.control.cdarrow.math.tex"
+								}
+							},
+							"patterns": [
+								{
+									"name": "meta.keyword.control.cdarrow.math.tex",
+									"begin": "(?<=@\\s*)V",
+									"end": "(V)|(?=@|\\\\end)",
+									"beginCaptures": {
+										"0": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"endCaptures": {
+										"1": {
+											"name": "keyword.control.cdarrow.math.tex"
+										}
+									},
+									"patterns": [
+										{
+											"include": "$self"
+										}
+									]
+								},
+								{
+									"include": "$self"
+								}
+							]
 						},
 						{
 							"include": "$self"
@@ -283,7 +431,7 @@
 				},
 				{
 					"name": "string.text.math.tex",
-					"begin": "(\\\\(?:text(?:rm|sf|tt|normal|bf|md|it|up)?|[lrc]lap|[hf]box|angl|ce))\\s*{",
+					"begin": "(\\\\(?:text(?:rm|sf|tt|normal|bf|md|it|up)?|[lrc]lap|[hf]box|angl|tag\\*?|ce))\\s*{",
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
@@ -378,7 +526,7 @@
 				},
 				{
 					"name": "meta.function.color.math.tex",
-					"match": "(\\\\color)\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}",
+					"match": "(\\\\(?:text)?color)\\s*\\{(#\\h{3}(?:\\h{3})?|\\h{6}|[a-zA-Z]+)\\}",
 					"captures": {
 						"1": {
 							"name": "variable.other.constant.math.tex"
@@ -389,8 +537,8 @@
 					}
 				},
 				{
-					"name": "meta.function.textcolor.math.tex",
-					"begin": "(\\\\(?:textcolor|colorbox))\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*(\\{)",
+					"name": "meta.function.colorbox.math.tex",
+					"begin": "(\\\\colorbox)\\s*\\{(#\\h{3}(?:\\h{3})?|\\h{6}|[a-zA-Z]+)\\}\\s*(\\{)",
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
@@ -420,7 +568,7 @@
 				},
 				{
 					"name": "meta.function.fcolorbox.math.tex",
-					"begin": "(\\\\fcolorbox)\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*\\{(#\\h{3}(?:\\h{3})?|[a-zA-Z]+)\\}\\s*(\\{)",
+					"begin": "(\\\\fcolorbox)\\s*\\{(#\\h{3}(?:\\h{3})?|\\h{6}|[a-zA-Z]+)\\}\\s*\\{(#\\h{3}(?:\\h{3})?|\\h{6}|[a-zA-Z]+)\\}\\s*(\\{)",
 					"beginCaptures": {
 						"1": {
 							"name": "variable.other.constant.math.tex"
