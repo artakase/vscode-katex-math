@@ -1,9 +1,13 @@
 # Change Log
 
+## [0.1.0]
+
+- Fix syntax
+
 ## [0.0.2]
 
-- Fixed syntax
-- Fixed screenshot
+- Fix syntax
+- Fix screenshot
 
 ## [0.0.1]
 

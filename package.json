@@ -2,7 +2,7 @@
   "name": "katex-math",
   "displayName": "KaTeX syntax for Markdown Math",
   "description": "Improved KaTeX syntax highlighting for Markdown Math",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "artakase",
   "author": {
       "name": "TAKASE Arihiro"
