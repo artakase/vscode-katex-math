@@ -20,7 +20,23 @@
           }
         },
         {
-          "name": "meta.punctuation.bracket.general.math.tex",
+          "name": "meta.control.spacing.math.tex",
+          "match": "(\\\\\\\\)(?:\\[\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^\\]]*\\])?",
+          "captures": {
+            "1": {
+              "name": "keyword.control.spacing.math.tex"
+            },
+            "2": {
+              "name": "constant.numeric.distance.math.tex"
+            }
+          }
+        },
+        {
+          "name": "constant.character.escape.math.tex",
+          "match": "\\\\[{}]"
+        },
+        {
+          "name": "meta.control.bracket.general.math.tex",
           "begin": "\\{",
           "end": "\\}",
           "beginCaptures": {
@@ -440,10 +456,7 @@
           },
           "patterns": [
             {
-              "include": "$self"
-            },
-            {
-              "include": "#mathmode"
+              "include": "#textmode"
             }
           ]
         },
@@ -472,7 +485,7 @@
         },
         {
           "name": "constant.character.escape.math.tex",
-          "match": "\\\\[{}%#&_$]"
+          "match": "\\\\[%#&_$]"
         },
         {
           "name": "meta.function.raisebox.math.tex",
@@ -497,10 +510,7 @@
           "contentName": "string.raisebox.math.tex",
           "patterns": [
             {
-              "include": "$self"
-            },
-            {
-              "include": "#mathmode"
+              "include": "#textmode"
             }
           ]
         },
@@ -569,10 +579,7 @@
           "contentName": "string.textcolor.math.tex",
           "patterns": [
             {
-              "include": "$self"
-            },
-            {
-              "include": "#mathmode"
+              "include": "#textmode"
             }
           ]
         },
@@ -602,10 +609,7 @@
           "contentName": "string.fcolorbox.math.tex",
           "patterns": [
             {
-              "include": "$self"
-            },
-            {
-              "include": "#mathmode"
+              "include": "#textmode"
             }
           ]
         },
@@ -658,18 +662,6 @@
           }
         },
         {
-          "name": "meta.control.spacing.math.tex",
-          "match": "(\\\\\\\\)(\\[[-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}\\])?",
-          "captures": {
-            "1": {
-              "name": "keyword.control.spacing.math.tex"
-            },
-            "2": {
-              "name": "constant.numeric.distance.math.tex"
-            }
-          }
-        },
-        {
           "name": "keyword.control.spacing.math.tex",
           "match": "~"
         },
@@ -707,20 +699,56 @@
         }
       ]
     },
-    "mathmode": {
+    "textmode": {
       "patterns": [
         {
-          "name": "support.class.math.block.math.tex",
-          "begin": "\\$",
-          "end": "\\$",
+          "name": "meta.control.spacing.math.tex",
+          "match": "(\\\\\\\\)(?:\\[\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^\\]]*\\])?",
+          "captures": {
+            "1": {
+              "name": "keyword.control.spacing.math.tex"
+            },
+            "2": {
+              "name": "constant.numeric.distance.math.tex"
+            }
+          }
+        },
+        {
+          "name": "constant.character.escape.math.tex",
+          "match": "\\\\[{}$]"
+        },
+        {
+          "name": "meta.control.bracket.general.math.tex",
+          "begin": "\\{",
+          "end": "\\}",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.math.block.begin.math.tex"
+              "name": "punctuation.bracket.begin.math.tex"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.math.block.end.math.tex"
+              "name": "punctuation.bracket.end.math.tex"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#textmode"
+            }
+          ]
+        },
+        {
+          "name": "meta.embedded.mathmode.inline.tex",
+          "begin": "\\$",
+          "end": "\\$",
+          "beginCaptures": {
+            "0": {
+              "name": "support.class.math.inline.math.tex"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "support.class.math.inline.math.tex"
             }
           },
           "patterns": [
