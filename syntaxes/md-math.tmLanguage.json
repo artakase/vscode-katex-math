@@ -489,7 +489,7 @@
         },
         {
           "name": "meta.function.raisebox.math.tex",
-          "begin": "(\\\\raisebox)\\s*\\{.*?([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2}).*?\\}\\s*({)",
+          "begin": "(\\\\raisebox)\\s*\\{\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^}]*\\}\\s*({)",
           "end": "\\}",
           "beginCaptures": {
             "1": {
@@ -516,7 +516,7 @@
         },
         {
           "name": "meta.function.above.math.tex",
-          "match": "(\\\\above)\\s*\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}",
+          "match": "(\\\\above)\\s*\\{\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^}]*\\}",
           "captures": {
             "1": {
               "name": "variable.other.constant.math.tex"
@@ -528,7 +528,7 @@
         },
         {
           "name": "meta.function.rule.math.tex",
-          "match": "(\\\\rule)\\s*(?:\\[([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\]\\s*)?\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}\\s*\\{([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})\\}",
+          "match": "(\\\\rule)\\s*(?:\\[\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^\\]]*\\]\\s*)?\\{\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^}]*\\}\\s*\\{\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2})[^}]*\\}",
           "captures": {
             "1": {
               "name": "variable.other.constant.math.tex"
@@ -639,7 +639,7 @@
         },
         {
           "name": "meta.control.spacing.math.tex",
-          "match": "(\\\\(?:m?kern|[mh]skip))\\s*([-+]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)[a-z]{2})",
+          "match": "(\\\\(?:m?kern|[mh]skip))\\s*(\\s*([-+]? *(?:\\d+(?:\\.\\d*)?|\\.\\d+) *[a-z]{2}))",
           "captures": {
             "1": {
               "name": "keyword.control.spacing.math.tex"
