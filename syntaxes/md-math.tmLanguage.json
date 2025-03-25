@@ -12,7 +12,7 @@
       "patterns": [
         {
           "name": "comment.line.percentage.math.tex",
-          "match": "(%).*(?=$)",
+          "match": "(%).*",
           "captures": {
             "1": {
               "name": "punctuation.definition.comment.math.tex"
@@ -186,10 +186,10 @@
               "name": "support.class.math.tex"
             },
             "3": {
-              "name": "variable.parameter.math.tex"
+              "name": "variable.parameter.numeric.math.tex"
             },
             "4": {
-              "name": "variable.parameter.math.tex"
+              "name": "variable.parameter.numeric.math.tex"
             }
           },
           "endCaptures": {
@@ -232,7 +232,7 @@
               "match": "@\\s*[=|.]"
             },
             {
-              "name": "meta.keyword.control.cdarrow.math.tex",
+              "name": "meta.structure.cdarrow.math.tex",
               "begin": "@\\s*(?=<)",
               "end": "(?<!@\\s*)(<)|@|\\\\end",
               "beginCaptures": {
@@ -247,7 +247,7 @@
               },
               "patterns": [
                 {
-                  "name": "meta.keyword.control.cdarrow.math.tex",
+                  "name": "meta.structure.cdarrow.inner.math.tex",
                   "begin": "(?<=@\\s*)<",
                   "end": "(<)|(?=@|\\\\end)",
                   "beginCaptures": {
@@ -272,7 +272,7 @@
               ]
             },
             {
-              "name": "meta.keyword.control.cdarrow.math.tex",
+              "name": "meta.structure.cdarrow.math.tex",
               "begin": "@\\s*(?=>)",
               "end": "(?<!@\\s*)(>)|@|\\\\end",
               "beginCaptures": {
@@ -287,7 +287,7 @@
               },
               "patterns": [
                 {
-                  "name": "meta.keyword.control.cdarrow.math.tex",
+                  "name": "meta.structure.cdarrow.inner.math.tex",
                   "begin": "(?<=@\\s*)>",
                   "end": "(>)|(?=@|\\\\end)",
                   "beginCaptures": {
@@ -312,7 +312,7 @@
               ]
             },
             {
-              "name": "meta.keyword.control.cdarrow.math.tex",
+              "name": "meta.structure.cdarrow.math.tex",
               "begin": "@\\s*(?=A)",
               "end": "(?<!@\\s*)(A)|@|\\\\end",
               "beginCaptures": {
@@ -327,7 +327,7 @@
               },
               "patterns": [
                 {
-                  "name": "meta.keyword.control.cdarrow.math.tex",
+                  "name": "meta.structure.cdarrow.inner.math.tex",
                   "begin": "(?<=@\\s*)A",
                   "end": "(A)|(?=@|\\\\end)",
                   "beginCaptures": {
@@ -352,7 +352,7 @@
               ]
             },
             {
-              "name": "meta.keyword.control.cdarrow.math.tex",
+              "name": "meta.structure.cdarrow.math.tex",
               "begin": "@\\s*(?=V)",
               "end": "(?<!@\\s*)(V)|@|\\\\end",
               "beginCaptures": {
@@ -367,7 +367,7 @@
               },
               "patterns": [
                 {
-                  "name": "meta.keyword.control.cdarrow.math.tex",
+                  "name": "meta.structure.cdarrow.inner.math.tex",
                   "begin": "(?<=@\\s*)V",
                   "end": "(V)|(?=@|\\\\end)",
                   "beginCaptures": {
@@ -499,15 +499,15 @@
               "name": "constant.numeric.distance.math.tex"
             },
             "3": {
-              "name": "string.raisebox.math.tex"
+              "name": "string.text.math.tex"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "string.raisebox.math.tex"
+              "name": "string.text.math.tex"
             }
           },
-          "contentName": "string.raisebox.math.tex",
+          "contentName": "string.text.math.tex",
           "patterns": [
             {
               "include": "#textmode"
@@ -568,15 +568,15 @@
               "name": "variable.parameter.color.math.tex"
             },
             "3": {
-              "name": "string.textcolor.math.tex"
+              "name": "string.text.math.tex"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "string.textcolor.math.tex"
+              "name": "string.text.math.tex"
             }
           },
-          "contentName": "string.textcolor.math.tex",
+          "contentName": "string.text.math.tex",
           "patterns": [
             {
               "include": "#textmode"
@@ -597,16 +597,16 @@
               "name": "variable.parameter.color.math.tex"
             },
             "4": {
-              "name": "string.fcolorbox.math.tex"
+              "name": "string.text.math.tex"
             }
           },
           "end": "\\}",
           "endCaptures": {
             "0": {
-              "name": "string.fcolorbox.math.tex"
+              "name": "string.text.math.tex"
             }
           },
-          "contentName": "string.fcolorbox.math.tex",
+          "contentName": "string.text.math.tex",
           "patterns": [
             {
               "include": "#textmode"
