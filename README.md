@@ -1,8 +1,8 @@
-# KaTex Syntax for Markdown Math
+# KaTeX Syntax for Markdown Math
 
-This extension provides KaTeX syntax highlighting for built-in Markdown Math.
+This extension enhances VS Code's built-in "Markdown Math" with precise KaTeX syntax highlighting.
 
-![](images/screenshot.png)
+![Screenshot showing KaTeX syntax highlighting in a Markdown Math document](https://raw.githubusercontent.com/artakase/vscode-katex-math/main/images/screenshot.png)
 
 ## License
 

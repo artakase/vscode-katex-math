@@ -1,8 +1,8 @@
 {
   "name": "katex-math",
   "displayName": "KaTeX syntax for Markdown Math",
-  "description": "Improved KaTeX syntax highlighting for Markdown Math",
-  "version": "0.1.0",
+  "description": "Enhanced KaTeX syntax highlighting for Markdown Math",
+  "version": "0.2.0",
   "publisher": "artakase",
   "author": {
     "name": "TAKASE Arihiro"
@@ -16,6 +16,11 @@
   "bugs": {
     "url": "https://github.com/artakase/vscode-katex-math/issues"
   },
+  "keywords": [
+    "markdown",
+    "math",
+    "katex"
+  ],
   "engines": {
     "vscode": "^1.86.0"
   },
