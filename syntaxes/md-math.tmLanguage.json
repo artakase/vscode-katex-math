@@ -448,13 +448,23 @@
           ]
         },
         {
-          "name": "string.verb.math.tex",
-          "match": "(\\\\verb\\*?)([^a-zA-Z]|(?<=\\*).).*?(?:\\2|$)",
-          "captures": {
+          "name": "meta.function.verb.math.tex",
+          "begin": "(\\\\verb\\*?)([^a-zA-Z]|(?<=\\*)(?:.))",
+          "end": "(\\2)|$",
+          "beginCaptures": {
             "1": {
               "name": "variable.other.constant.math.tex"
+            },
+            "2": {
+              "name": "string.verb.math.tex"
             }
-          }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "string.verb.math.tex"
+            }
+          },
+          "contentName": "string.verb.math.tex"
         },
         {
           "name": "constant.character.escape.math.tex",
