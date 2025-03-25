@@ -5,17 +5,17 @@
   "version": "0.1.0",
   "publisher": "artakase",
   "author": {
-      "name": "TAKASE Arihiro"
+    "name": "TAKASE Arihiro"
   },
   "license": "MIT",
-    "homepage": "https://github.com/artakase/vscode-katex-math",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/artakase/vscode-katex-math"
-    },
-    "bugs": {
-        "url": "https://github.com/artakase/vscode-katex-math/issues"
-    },
+  "homepage": "https://github.com/artakase/vscode-katex-math",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artakase/vscode-katex-math"
+  },
+  "bugs": {
+    "url": "https://github.com/artakase/vscode-katex-math/issues"
+  },
   "engines": {
     "vscode": "^1.86.0"
   },
@@ -23,10 +23,12 @@
     "Programming Languages"
   ],
   "contributes": {
-    "grammars": [{
-      "language": "markdown-math",
-      "scopeName": "text.html.markdown.math",
-      "path": "./syntaxes/md-math.tmLanguage.json"
-    }]
+    "grammars": [
+      {
+        "language": "markdown-math",
+        "scopeName": "text.html.markdown.math",
+        "path": "./syntaxes/md-math.tmLanguage.json"
+      }
+    ]
   }
 }
